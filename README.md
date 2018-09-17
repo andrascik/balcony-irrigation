@@ -2,6 +2,29 @@
 
 Balcony automated watering system powered by arduino, esp8266 and node-red via MQTT.
 
+## Scheduler
+
+The aim is to check soil moisture and weather forecast API on regular basis (4 or 6 hours variant) and find the best algorithm for watering.
+
+
+### 4 hrs variant
+
+- 00:00
+- 04:00
+- 08:00
+- 12:00
+- 16:00
+- 20:00	
+
+### 6 hrs variant
+
+- 00:00
+- 06:00
+- 12:00
+- 18:00
+
+API call every 6 hours checks the amount of RainProbability higher than 40%
+
 ## Wiring scheme
 
 ![Schematics](uno-with-esp.png)
