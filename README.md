@@ -4,7 +4,7 @@ Balcony automated watering system powered by arduino, esp8266 and node-red via M
 
 ## Arduino Uno code
 
-```
+```c++
 #include <Servo.h>
 int servoPin = 10;
 char recstr[5] = ""; //Initialized variable to store recieved data
@@ -45,7 +45,7 @@ void loop() {
 
 ## ESP8266 code
 
-```
+```c++
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 
