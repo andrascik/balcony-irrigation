@@ -25,6 +25,17 @@ The aim is to check soil moisture and weather forecast API on regular basis (4 o
 
 API call every 6 hours checks the amount of RainProbability higher than 40%
 
+## Accuweather API
+
+
+API key: <GET_ONE_FROM_ACCUWEATHER>
+
+http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/300250
+http://dataservice.accuweather.com/currentconditions/v1/300250/historical
+
+http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/300250?apikey={YOUR_ACCUWEATHER_API_KEY}&language=en-gb&details=true&metric=true
+
+
 ## Wiring scheme
 
 ![Schematics](uno-with-esp.png)
