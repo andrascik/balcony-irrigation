@@ -2,6 +2,10 @@
 
 Balcony automated watering system powered by arduino, esp8266 and node-red via MQTT.
 
+## Wiring scheme
+
+![Schematics](uno-with-esp.png)
+
 ## Arduino Uno code
 
 ```c++
