@@ -2,6 +2,8 @@
 
 Balcony automated watering system powered by arduino, esp8266 and node-red via MQTT.
 
+![Schematics](irrigation-valve-arduino.jpg)
+
 ## Scheduler
 
 The aim is to check soil moisture and weather forecast API on regular basis (4 or 6 hours variant) and find the best algorithm for watering.
