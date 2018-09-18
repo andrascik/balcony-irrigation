@@ -2,7 +2,7 @@
 
 Balcony automated watering system powered by arduino, esp8266 and node-red via MQTT.
 
-![Schematics](irrigation-valve-arduino.jpg)
+![Valve with servo](irrigation-valve-arduino.jpg)
 
 ## Scheduler
 
@@ -197,3 +197,8 @@ void loop() {
 }
 
 ```
+
+## Photogallery
+
+![Plants](plants-with-watering.jpg)
+
