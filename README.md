@@ -206,6 +206,6 @@ Some plants
 ![Water level sensor](ultrasonic-sensor-hcsr04.jpg)
 Water level sensor made from ultrasonic hc-sr04
 
-![Water tank](water-tankjpg)
+![Water tank](water-tank.jpg)
 25 litres plastic water tank
 
