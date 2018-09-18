@@ -201,4 +201,8 @@ void loop() {
 ## Photogallery
 
 ![Plants](plants-with-watering.jpg)
+Some plants
+
+![Water level sensor](ultrasonic-sensor-hcsr04.jpg)
+Water level sensor made from ultrasonic hc-sr04
 
