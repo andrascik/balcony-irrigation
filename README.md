@@ -38,9 +38,26 @@ http://dataservice.accuweather.com/currentconditions/v1/300250/historical
 http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/300250?apikey={YOUR_ACCUWEATHER_API_KEY}&language=en-gb&details=true&metric=true
 
 
+## Hardware
+
+- Arduino Uno
+- ESP8266 esp01s WIFI
+- Temperature probe ds18b20
+- Ultrasonic sensor hcsr04
+
 ## Wiring scheme
 
 ![Schematics](uno-with-esp.png)
+
+## Libraries for arduino
+
+### Dallas Temperature probe
+
+https://github.com/milesburton/Arduino-Temperature-Control-Library
+
+### OneWire
+https://github.com/PaulStoffregen/OneWire
+
 
 ## Arduino Uno code
 
