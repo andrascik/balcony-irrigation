@@ -63,10 +63,30 @@ https://github.com/PaulStoffregen/OneWire
 
 ```c++
 #include <Servo.h>
+
+// Libraries for dallas temperature prob
+#include <OneWire.h>
+#include <DallasTemperature.h>
+ 
+// Data wire is plugged into port 5 on the Arduino
+#define ONE_WIRE_BUS 2
+ 
+// Hook up HC-SR04 with Trig to Arduino Pin 10, Echo to Arduino pin 13
+#define trigPin 12
+#define echoPin 13
+
 int servoPin = 10;
 char recstr[5] = ""; //Initialized variable to store recieved data
 char oValve[5] = "valv0";
 char cValve[5] = "valv1";
+int tankHeightCm = 45;
+float Celsius=0;
+
+float duration, distance;
+
+OneWire oneWire(ONE_WIRE_BUS);
+
+DallasTemperature sensors(&oneWire);
 
 Servo servo;
 
@@ -84,6 +104,11 @@ void setup() {
   Serial.begin(115200);
   Serial.flush();
   servo.attach(servoPin);
+  sensors.begin();
+  
+  pinMode(ONE_WIRE_BUS, INPUT_PULLUP);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
 }
 
 void loop() {
@@ -95,8 +120,44 @@ void loop() {
   if (strncmp(recstr, oValve, 5) == 0) {
     openValve();
   }
+  
   Serial.println(recstr);
+
+  // Write a pulse to the HC-SR04 Trigger Pin
+  
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+ 
+  duration = pulseIn(echoPin, HIGH);
+  
+  // Determine distance from duration
+  // Use 343 metres per second as speed of sound
+  
+  distance = (duration / 2) * 0.0343;
+  if (distance >= 400 || distance <= 2) {
+     Serial.println("Out of range");
+  }
+  else {
+    float perc = 0.00;
+    perc = distance - tankHeightCm;
+    perc = abs(perc)*2.5;
+    Serial.print("W:");
+    Serial.println(String(perc));
+    delay(500);
+  }
+
+  int lightIntensity=analogRead(A0);
+  Serial.print("L:");
+  Serial.println(lightIntensity);
+
+  sensors.requestTemperatures(); 
   delay(1000);
+  Celsius=sensors.getTempCByIndex(0);
+  Serial.print("C:");
+  Serial.print(Celsius);
 }
 ```
 
