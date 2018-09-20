@@ -47,7 +47,9 @@ http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/300250?apikey={YOU
 
 ## Wiring scheme
 
-![Schematics](uno-with-esp.png)
+![Schematics](balcony-watering_bb.png)
+![Board](board.jpg)
+![LDR detail](ldr_detail.jpg)
 
 ## Libraries for arduino
 
